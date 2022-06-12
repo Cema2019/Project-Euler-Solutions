@@ -18,7 +18,6 @@ public class Main {
     }
     
     public static boolean isPrime(int number) {
-        if (number <= 1) return false; 
-        return !IntStream.rangeClosed(2, number / 2).anyMatch(i -> number % i == 0);
+        return number > 1 && IntStream.range(2, number).noneMatch(i -> number % i == 0);
     }
 }
